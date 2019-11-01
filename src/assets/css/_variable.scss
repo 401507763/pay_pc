@@ -1,0 +1,19 @@
+// 简写：全称
+$boxs: (
+  b: border,
+  p: padding,
+  m: margin
+);
+$poss: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left
+);
+
+// 布局
+$text-align:(
+    center,
+    left,
+    right
+)

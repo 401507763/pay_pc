@@ -1,0 +1,42 @@
+@import "variable";
+@import "function";
+
+// 初始化
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+// 自定义
+a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+  color: #fa7e3e;
+}
+
+// 样式微调 1~5 10 ... 25
+@for $i from 1 through 10 {
+  $i: if($i>5, ($i - 5) * 5, $i);
+  @each $box in map-keys($boxs) {
+    @each $pos in map-keys($poss) {
+      .#{$box}#{$pos}#{$i} {
+        #{changeShortToLong($box)}-#{changeShortToLong($pos)}: #{$i}px;
+      }
+    }
+  }
+}
+
+// 布局
+@each $t in $text-align {
+  .text-#{$t} {
+    text-align: #{$t};
+  }
+}
